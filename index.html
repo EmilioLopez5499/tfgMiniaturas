@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PisnaspasMinis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav id="navbar">
+    <div class="nav-logo">PisnaspasMinis</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>PisnaspasMinis</h1>
+      <p>Estudio profesional de pintado de miniaturas</p>
+      <a href="#servicios" class="btn">Ver servicios</a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <h3>Pintado básico</h3>
+        <p>Tropas, héroes y unidades con acabado limpio y tabletop quality.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Pintado avanzado</h3>
+        <p>Técnicas de NMM, OSL, zenithal y efectos especiales.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Conversiones</h3>
+        <p>Modelado, sculpting y conversiones personalizadas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="galeria-grid" id="galeria-grid">
+      <!-- Las imágenes se cargarán desde galeria.ts -->
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="sobre-nosotros">
+    <h2>Sobre nosotros</h2>
+    <p>PisnaspasMinis es un estudio especializado en el pintado de miniaturas para wargames y coleccionismo. Con años de experiencia y pasión por el detalle, cada miniatura es tratada como una obra de arte única.</p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto">
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <input type="email" id="email" placeholder="Tu email" required />
+      <textarea id="mensaje" placeholder="Cuéntanos tu proyecto..." required></textarea>
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 PisnaspasMinis · Todos los derechos reservados</p>
+  </footer>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

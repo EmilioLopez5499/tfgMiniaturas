@@ -1,0 +1,257 @@
+/* ── VARIABLES Y RESET ── */
+:root {
+  --color-fondo: #1a1a2e;
+  --color-fondo-seccion: #16213e;
+  --color-acento: #c9a84c;
+  --color-acento-hover: #e8c96d;
+  --color-texto: #e0e0e0;
+  --color-texto-suave: #a0a0b0;
+  --fuente-titulo: 'Cinzel', serif;
+  --fuente-cuerpo: 'Lato', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-cuerpo);
+  font-weight: 300;
+}
+
+/* ── NAVEGACIÓN ── */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+#navbar.scrolled {
+  background-color: rgba(22, 33, 62, 0.97);
+  border-bottom: 1px solid var(--color-acento);
+}
+
+.nav-logo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  color: var(--color-acento);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-acento);
+}
+
+/* ── HERO ── */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('img/hero.jpg') center/cover no-repeat;
+}
+
+.hero-content h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 4rem;
+  color: var(--color-acento);
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--color-texto);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+/* ── BOTÓN ── */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--color-acento);
+  color: var(--color-acento);
+  text-decoration: none;
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn:hover {
+  background: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+/* ── SECCIONES GENERALES ── */
+section {
+  padding: 6rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  color: var(--color-acento);
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ── SERVICIOS ── */
+#servicios {
+  background-color: var(--color-fondo-seccion);
+  max-width: 100%;
+  padding: 6rem 3rem;
+}
+
+#servicios h2 {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicio-card {
+  border: 1px solid var(--color-acento);
+  padding: 2rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.servicio-card:hover {
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.servicio-card h3 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-acento);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.servicio-card p {
+  color: var(--color-texto-suave);
+  line-height: 1.7;
+}
+
+/* ── GALERÍA ── */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.galeria-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.85;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+/* ── SOBRE NOSOTROS ── */
+#sobre-nosotros {
+  background-color: var(--color-fondo-seccion);
+  max-width: 100%;
+  padding: 6rem 3rem;
+  text-align: center;
+}
+
+#sobre-nosotros p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.9;
+  color: var(--color-texto-suave);
+  font-size: 1.05rem;
+}
+
+/* ── CONTACTO ── */
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  background: transparent;
+  border: 1px solid var(--color-texto-suave);
+  color: var(--color-texto);
+  padding: 0.8rem 1rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  border-color: var(--color-acento);
+}
+
+#form-contacto textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+#form-contacto .btn {
+  align-self: flex-start;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+}
