@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
-import imagenesRouter from './routes/imagenes.js';
-import contactoRouter from './routes/contacto.js';
+import imagenesRouter from './routes/imagenes';
+import contactoRouter from './routes/contacto';
 
 dotenv.config();
 

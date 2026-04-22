@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
 import path from 'path';
-import { obtenerImagenes, subirImagen } from '../controllers/imagenesController.js';
+import { obtenerImagenes, subirImagen } from '../controllers/imagenesController';
 
 const router = Router();
 

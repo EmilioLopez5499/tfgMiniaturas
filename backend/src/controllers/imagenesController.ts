@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import pool from '../db.js';
+import pool from '../db';
 
 export async function obtenerImagenes(_req: Request, res: Response): Promise<void> {
   try {
