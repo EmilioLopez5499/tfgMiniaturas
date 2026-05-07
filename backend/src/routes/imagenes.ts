@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import multer from 'multer';
 import path from 'path';
-import { obtenerImagenes, subirImagen } from '../controllers/imagenesController';
+import { obtenerImagenes, subirImagen, eliminarImagen } from '../controllers/imagenesController';
+import { verificarToken, soloAdmin } from '../middlewares/auth';
 
 const router = Router();
 
@@ -19,5 +20,6 @@ const upload = multer({ storage });
 
 router.get('/', obtenerImagenes);
 router.post('/', upload.single('imagen'), subirImagen);
+router.delete('/:id', verificarToken, soloAdmin, eliminarImagen);
 
 export default router;

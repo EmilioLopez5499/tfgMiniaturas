@@ -27,3 +27,17 @@ export async function subirImagen(req: Request, res: Response): Promise<void> {
     res.status(500).json({ error: 'Error al subir la imagen' });
   }
 }
+
+export async function eliminarImagen(req: Request, res: Response): Promise<void> {
+  try {
+    const { id } = req.params;
+    const resultado = await pool.query('DELETE FROM imagenes WHERE id = $1 RETURNING *', [id]);
+    if (resultado.rows.length === 0) {
+      res.status(404).json({ error: 'Imagen no encontrada' });
+      return;
+    }
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al eliminar la imagen' });
+  }
+}
