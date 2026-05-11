@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PisnaspasMinis — Panel de administración</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-logo">PisnaspasMinis</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><button class="btn" id="btn-cerrar-sesion" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Cerrar sesión</button></li>
+    </ul>
+  </nav>
+
+  <main class="admin-container">
+
+    <div class="admin-header">
+      <h1>Panel de administración</h1>
+      <p id="admin-bienvenida"></p>
+    </div>
+
+    <!-- SUBIR IMAGEN -->
+    <section class="admin-seccion">
+      <h2>Subir imagen a la galería</h2>
+      <div class="admin-card">
+        <input type="text" id="imagen-alt" placeholder="Descripción de la imagen" />
+        <input type="file" id="imagen-archivo" accept="image/*" />
+        <button class="btn" id="btn-subir">Subir imagen</button>
+        <p class="admin-mensaje" id="subir-mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LISTA DE IMÁGENES -->
+    <section class="admin-seccion">
+      <h2>Imágenes en la galería</h2>
+      <div class="admin-imagenes-grid" id="admin-imagenes-grid">
+      </div>
+    </section>
+
+  </main>
+
+<script type="module" src="dist/admin.js"></script>
+</body>
+</html>

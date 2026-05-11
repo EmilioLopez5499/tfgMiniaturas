@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PisnaspasMinis — Acceder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-logo">PisnaspasMinis</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+    </ul>
+  </nav>
+
+  <main class="auth-container">
+    <div class="auth-card">
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login">Iniciar sesión</button>
+        <button class="auth-tab" id="tab-registro">Registrarse</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="form-login-container">
+        <h2>Bienvenido</h2>
+        <div id="form-login">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input type="password" id="login-password" placeholder="Contraseña" required />
+          <button class="btn" id="btn-login">Iniciar sesión</button>
+        </div>
+        <p class="auth-error" id="login-error"></p>
+      </div>
+
+      <!-- REGISTRO -->
+      <div id="form-registro-container" class="hidden">
+        <h2>Crear cuenta</h2>
+        <div id="form-registro">
+          <input type="text" id="registro-nombre" placeholder="Nombre" required />
+          <input type="email" id="registro-email" placeholder="Email" required />
+          <input type="password" id="registro-password" placeholder="Contraseña" required />
+          <button class="btn" id="btn-registro">Crear cuenta</button>
+        </div>
+        <p class="auth-error" id="registro-error"></p>
+      </div>
+
+    </div>
+  </main>
+
+<script type="module" src="dist/login.js"></script>
+</body>
+</html>

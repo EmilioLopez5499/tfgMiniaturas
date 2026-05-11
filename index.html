@@ -6,6 +6,7 @@
   <title>PisnaspasMinis</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -18,6 +19,8 @@
       <li><a href="#galeria">Galería</a></li>
       <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><button class="btn" style="padding: 0.4rem 1rem; font-size: 0.8rem;" onclick="window.location.href='login.html'">Iniciar sesión</button></li>
+      <li><button class="btn" style="padding: 0.4rem 1rem; font-size: 0.8rem;" onclick="window.location.href=localStorage.getItem('usuario') ? 'perfil.html' : 'login.html'">Mi cuenta</button></li>
     </ul>
   </nav>
 
@@ -35,16 +38,16 @@
     <h2>Servicios</h2>
     <div class="servicios-grid">
       <div class="servicio-card">
-        <h3>Pintado básico</h3>
-        <p>Tropas, héroes y unidades con acabado limpio y tabletop quality.</p>
+        <h3>Nivel básico</h3>
+        <p>Unidades, héroes y grupos con acabado tabletop.</p>
       </div>
       <div class="servicio-card">
-        <h3>Pintado avanzado</h3>
-        <p>Técnicas de NMM, OSL, zenithal y efectos especiales.</p>
+        <h3>Nivel intermedio</h3>
+        <p>Técnicas avanzadas como NMM, OSL y efectos especiales.</p>
       </div>
       <div class="servicio-card">
-        <h3>Conversiones</h3>
-        <p>Modelado, sculpting y conversiones personalizadas.</p>
+        <h3>Nivel avanzado</h3>
+        <p>Peanas, sculpting y conversiones personalizadas.</p>
       </div>
     </div>
   </section>
@@ -60,7 +63,7 @@
   <!-- SOBRE NOSOTROS -->
   <section id="sobre-nosotros">
     <h2>Sobre nosotros</h2>
-    <p>PisnaspasMinis es un estudio especializado en el pintado de miniaturas para wargames y coleccionismo. Con años de experiencia y pasión por el detalle, cada miniatura es tratada como una obra de arte única.</p>
+    <p>PisnaspasMinis es un estudio de pintado de miniaturas para jugar y coleccionar.Con pasión y dedicación, transformamos cada modelo en una obra de arte.</p>
   </section>
 
   <!-- CONTACTO -->
@@ -73,11 +76,6 @@
       <button type="submit" class="btn">Enviar mensaje</button>
     </form>
   </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 PisnaspasMinis · Todos los derechos reservados</p>
-  </footer>
 
   <script type="module" src="dist/main.js"></script>
 </body>

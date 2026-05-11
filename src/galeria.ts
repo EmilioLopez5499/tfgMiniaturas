@@ -1,28 +1,37 @@
 interface Imagen {
+  id: number;
   src: string;
   alt: string;
+  creado_en: string;
 }
 
-const imagenesLocales: Imagen[] = [
-  { src: 'img/mini1.jpg', alt: 'Miniatura 1' },
-  { src: 'img/mini2.jpg', alt: 'Miniatura 2' },
-  { src: 'img/mini3.jpg', alt: 'Miniatura 3' },
-  { src: 'img/mini4.jpg', alt: 'Miniatura 4' },
-  { src: 'img/mini5.jpg', alt: 'Miniatura 5' },
-  { src: 'img/mini6.jpg', alt: 'Miniatura 6' },
-  { src: 'img/mini7.jpg', alt: 'Miniatura 7' },
-  { src: 'img/mini8.jpg', alt: 'Miniatura 8' },
-];
+const API_URL = 'http://localhost:3000';
 
-export function cargarGaleria(): void {
+export async function cargarGaleria(): Promise<void> {
   const grid = document.getElementById('galeria-grid');
   if (!grid) return;
 
-  imagenesLocales.forEach(imagen => {
-    const img = document.createElement('img');
-    img.src = imagen.src;
-    img.alt = imagen.alt;
-    img.loading = 'lazy';
-    grid.appendChild(img);
-  });
+  try {
+    const respuesta = await fetch(`${API_URL}/api/imagenes`);
+    if (!respuesta.ok) throw new Error('Error al obtener las imágenes');
+
+    const imagenes: Imagen[] = await respuesta.json();
+
+    if (imagenes.length === 0) {
+      grid.innerHTML = '<p class="galeria-vacia">Próximamente...</p>';
+      return;
+    }
+
+    imagenes.forEach(imagen => {
+      const img = document.createElement('img');
+      img.src = `${API_URL}${imagen.src}`;
+      img.alt = imagen.alt;
+      img.loading = 'lazy';
+      grid.appendChild(img);
+    });
+
+  } catch (error) {
+    grid.innerHTML = '<p class="galeria-vacia">Error al cargar las imágenes.</p>';
+    console.error(error);
+  }
 }

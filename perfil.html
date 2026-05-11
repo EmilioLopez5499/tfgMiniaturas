@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PisnaspasMinis — Mi perfil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-logo">PisnaspasMinis</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><button class="btn" id="btn-cerrar-sesion" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Cerrar sesión</button></li>
+    </ul>
+  </nav>
+
+  <main class="admin-container">
+
+    <div class="admin-header">
+      <h1 id="perfil-nombre"></h1>
+      <p id="perfil-email"></p>
+    </div>
+
+    <section class="admin-seccion">
+      <h2>Mis pedidos</h2>
+      <div id="pedidos-lista"></div>
+    </section>
+
+  </main>
+
+  <script type="module" src="dist/perfil.js"></script>
+</body>
+</html>
