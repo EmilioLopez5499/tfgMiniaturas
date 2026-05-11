@@ -2,18 +2,25 @@ const API_URL = 'http://localhost:3000';
 
 function verificarAcceso(): void {
   const usuario = localStorage.getItem('usuario');
-  if (!usuario) {
+  const token = localStorage.getItem('token');
+
+  if (!usuario || !token) {
     window.location.href = 'login.html';
     return;
   }
 
-  const datos = JSON.parse(usuario);
-  const nombre = document.getElementById('perfil-nombre');
-  const email = document.getElementById('perfil-email');
-  if (nombre) nombre.textContent = datos.nombre;
-  if (email) email.textContent = datos.email;
+  try {
+    const datos = JSON.parse(usuario);
+    const nombre = document.getElementById('perfil-nombre');
+    const email = document.getElementById('perfil-email');
+    if (nombre) nombre.textContent = datos.nombre;
+    if (email) email.textContent = datos.email;
+  } catch {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+    window.location.href = 'login.html';
+  }
 }
-
 async function cargarPedidos(): Promise<void> {
   const lista = document.getElementById('pedidos-lista');
   if (!lista) return;

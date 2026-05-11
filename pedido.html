@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PisnaspasMinis — Hacer un pedido</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-logo">PisnaspasMinis</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="perfil.html">Mi perfil</a></li>
+      <li><button class="btn" id="btn-cerrar-sesion" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Cerrar sesión</button></li>
+    </ul>
+  </nav>
+
+  <main class="admin-container">
+
+    <div class="admin-header">
+      <h1>Hacer un pedido</h1>
+      <p>Describe tu proyecto y calcularemos un presupuesto automático</p>
+    </div>
+
+    <section class="admin-seccion">
+      <div class="admin-card" style="max-width: 700px;">
+        <input type="text" id="pedido-figura" placeholder="Nombre de la figura o unidad" />
+        <textarea id="pedido-descripcion" placeholder="Describe el trabajo: nivel de pintado, extras, cantidad de figuras..." style="height: 150px; resize: vertical; background: transparent; border: 1px solid var(--color-texto-suave); color: var(--color-texto); padding: 0.8rem 1rem; font-family: var(--fuente-cuerpo); font-size: 0.95rem; outline: none;"></textarea>
+        <button class="btn" id="btn-calcular">Calcular presupuesto</button>
+      </div>
+    </section>
+
+    <!-- PRESUPUESTO -->
+    <section class="admin-seccion" id="seccion-presupuesto" style="display:none;">
+      <h2>Presupuesto estimado</h2>
+      <div class="admin-card" style="max-width: 700px;">
+        <div id="presupuesto-desglose"></div>
+        <div class="presupuesto-total">
+          <span>Total estimado:</span>
+          <span id="presupuesto-total-precio"></span>
+        </div>
+        <p style="color: var(--color-texto-suave); font-size: 0.85rem; margin-top: 0.5rem;">
+          Este presupuesto es orientativo. Un pintor revisará tu pedido y confirmará el precio final.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <button class="btn" id="btn-confirmar">Confirmar pedido</button>
+          <button class="btn" id="btn-cancelar" style="border-color: var(--color-texto-suave); color: var(--color-texto-suave);">Cancelar</button>
+        </div>
+        <p class="admin-mensaje" id="pedido-mensaje"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="dist/pedido.js"></script>
+</body>
+</html>
